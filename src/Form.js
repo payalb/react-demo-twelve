@@ -62,14 +62,16 @@ class Form extends Component {
    event.preventDefault();
   }
 render(){
+
+    const p = this.state.person;
   return (
     <div>
     <form onSubmit={this.printDetails}>
-      Name: <input type= "text" id= "name"  value = {this.state.person.name} onChange={this.setName}/> <br/>
-      Address: <input type= "text" id= "address" value = {this.state.person.address}  onChange={this.setAddress}/> <br/>
-      Age: <input type= "number" id= "age" value = {this.state.person.age}  onChange={this.setAge}/> <br/>
-      Phone Number: <input type= "number" id= "phoneNumber" value = {this.state.person.phoneNumber}  onChange={this.setPhoneNumber}/> <br/>
-      Gender: <input type= "text" id= "gender" value = {this.state.person.gender}  onChange={this.setGender}/> <br/>
+      Name: <input type= "text" id= "name"  value = {p.name} onChange={this.setName}/> <br/>
+      Address: <input type= "text" id= "address" value = {p.address}  onChange={this.setAddress}/> <br/>
+      Age: <input type= "number" id= "age" value = {p.age}  onChange={this.setAge}/> <br/>
+      Phone Number: <input type= "number" id= "phoneNumber" value = {p.phoneNumber}  onChange={this.setPhoneNumber}/> <br/>
+      Gender: <input type= "text" id= "gender" value = {p.gender}  onChange={this.setGender}/> <br/>
       <input type= "submit" />
     </form>
     </div>
