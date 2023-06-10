@@ -1,0 +1,21 @@
+on: 
+  push:
+  pull_request_target:
+    types:
+      - closed
+    branches:
+      master  
+
+
+jobs:
+ 
+  if_merged:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy Stage
+      uses: fjogeleit/http-request-action@v1
+      with:
+        url: 'https://pgexdvkgtpmh75te5nj6q7dfz40rouue.lambda-url.ap-south-1.on.aws/'
+        method: 'GET'
+  
